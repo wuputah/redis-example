@@ -6,12 +6,15 @@ class ItemsController < ApplicationController
   # GET /items.xml
   def index
     # use a where clause to delay query execution
-    @items = Item.where('1 = 1')
+    @db_items = Item.where('1 = 1')
+    @redis_items = $redis.lrange('items', 0, -1).map do |item|
+      Marshal.load(item)
+    end
     @item = Item.new
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @items }
+      format.xml  { render :xml => @db_items }
     end
   end
 

@@ -1,12 +1,22 @@
-<h1>Listing items using fragment caching</h1>
+<h1>All items</h1>
+
+<h2>...using fragment caching</h2>
 
 <% cache do %>
   <ul>
-    <% @items.each do |item| %>
+    <% @db_items.each do |item| %>
       <li><%= item.name %></li>
     <% end %>
   </ul>
 <% end %>
+
+<h2>...using Redis list</h2>
+
+<ul>
+  <% @redis_items.each do |item| %>
+    <li><%= item.name %></li>
+  <% end %>
+</ul>
 
 <h1>Add item</h1>
 
