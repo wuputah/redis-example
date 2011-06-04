@@ -28,12 +28,15 @@ must be serialized or marshalled.
 
 1. Install redis
 2. `bundle install`
-3. `gem install foreman`
-4. Customize settings in `.env`
+3. rake db:migrate
+4. `gem install foreman`
 5. `foreman start`
 
 # Project history
 
-1. Set up Gemfile. Add `redis`, `redis-store`. For production,
-   include `pg`. Add `thin` for running on Cedar.
-2. Set up Redis per `config/initializers/redis.rb`.
+1. Set up Gemfile. Add `redis`, `redis-store (>=1.0.0beta5)`. For
+   production, include `pg`. Add `thin` for running on Cedar.
+2. Set up Redis using redis-store per `config/initializers/redis.rb`.
+3. Scaffold items and cache item list using fragment caching. Add cache
+   expiration when item is created. Enable caching in development to
+   test locally.
