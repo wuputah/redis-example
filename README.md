@@ -47,6 +47,9 @@ handling updates and deletes is more challenging.
 
 # Running on Bamboo
 
+The `bamboo` branch of this project is designed to run on Bamboo.
+
+    git checkout bamboo
     heroku apps:create --stack bamboo-mri-1.9.2
     heroku addons:add redistogo:nano
     git push heroku bamboo:master
@@ -58,6 +61,9 @@ http://redis-example-bamboo.heroku.com/
 
 # Running on Cedar
 
+The `master` branch of this project is designed to run on Cedar.
+
+    git checkout master
     heroku apps:create --stack cedar
     heroku addons:add redistogo:nano
     git push heroku master
