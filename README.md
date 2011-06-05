@@ -12,6 +12,12 @@ Similar to memcached, all keys and any value stored in Redis (including
 those in data structures) is a string. To store Ruby objects, values
 must be serialized or marshalled.
 
+Redis can also be used to power the popular background job libary,
+Resque.
+
+[Learn more about Redis on
+Heroku](http://devcenter.heroku.com/articles/redistogo)
+
 ## Using Redis as a key-value store
 
 This example app demonstrates using Redis as a storage engine using the
