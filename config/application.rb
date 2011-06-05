@@ -40,8 +40,6 @@ module RedisExample
     config.filter_parameters += [:password]
 
     # set up Redis cache store for rails caching
-    redis = ENV['REDISTOGO_URL'] || 'redis://127.0.0.1'
-    config.cache_store = :redis_store, redis
-    config.session_store = :redis_session_store, { :servers => redis, :expires => 86400 }
+    config.cache_store = :redis_store, ENV['REDISTOGO_URL'] || 'redis://127.0.0.1'
   end
 end

@@ -20,7 +20,8 @@ caching. Set up this way, Redis will handle caching for page, action,
 fragment, and session caching. You can also use it directly using
 `Rails.cache` calls.
 
-* Configuration: `config/application.rb`
+* Configuration: `config/application.rb`,
+  `config/initializers/session_store.rb`
 * Fragment caching: `app/views/items/index.html.erb`
 * Cache expiration: `app/sweepers/item_sweeper.rb`
 
