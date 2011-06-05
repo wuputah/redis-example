@@ -80,13 +80,3 @@ http://redis-example-cedar.herokuapp.com/
 2. `bundle install`
 3. `rake db:migrate`
 4. `rails server`
-
-# Project history
-
-1. Set up Gemfile. Add `redis`, `redis-store (>=1.0.0beta5)`. For
-   production, include `pg`. Add `thin` for running on Cedar.
-2. Set up Redis using redis-store per `config/initializers/redis.rb`.
-3. Scaffold items and cache item list using fragment caching. Add cache
-   expiration when item is created. Enable caching in development to
-   test locally.
-4. Add second example of storing items in a Redis list.
