@@ -47,15 +47,25 @@ handling updates and deletes is more challenging.
 
 # Running on Bamboo
 
-    heroku create --stack bamboo-mri-1.9.2
+    heroku apps:create --stack bamboo-mri-1.9.2
     heroku addons:add redistogo:nano
-    git push heroku master
+    git push heroku bamboo:master
+    heroku rake db:migrate
+    heroku restart
+
+A running example can be seen at
+http://redis-example-bamboo.heroku.com/
 
 # Running on Cedar
 
-    heroku create --stack cedar
+    heroku apps:create --stack cedar
     heroku addons:add redistogo:nano
     git push heroku master
+    heroku run rake db:migrate
+    heroku restart
+
+A running example can be seen at
+http://redis-example-cedar.herokuapp.com/
 
 # Running locally
 
