@@ -5,8 +5,8 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.xml
   def index
-    # use a where clause to delay query execution
-    @db_items = Item.where('1 = 1')
+    # use a scope to delay query execution
+    @db_items = Item.scoped
     @redis_items = $redis.lrange('items', 0, -1).map do |item|
       Marshal.load(item)
     end
