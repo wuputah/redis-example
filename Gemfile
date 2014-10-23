@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.7'
 gem 'redis'
 gem 'redis-store', '>= 1.0.0beta5'
+gem 'rake', '0.8.7'
 
 group :development do
   gem 'sqlite3'
